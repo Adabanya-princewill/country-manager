@@ -16,7 +16,7 @@ const Header = () => {
             >
               <FaMoon
                 id="theme-toggle"
-                className="text-gray-500 mr-2 h-5"
+                className="text-gray-500 mr-2 h-4"
               /> Dark mode
             </span>
 

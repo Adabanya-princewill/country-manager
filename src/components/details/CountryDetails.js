@@ -17,7 +17,6 @@ const CountryDetails = () => {
       .then(res => res.json())
       .then(
         (result) => {
-          console.log("hello")
           setIsLoaded(true);  
           if (Array.isArray(result)){
             let [country] = result;
@@ -62,6 +61,7 @@ const CountryDetails = () => {
             <div className="lg:w-5/5 mx-auto flex flex-wrap">
 
               <img
+               alt='Country Details'
                 className="border lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded"
                 src={country.flags.png} />
 

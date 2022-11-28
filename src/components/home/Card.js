@@ -17,7 +17,8 @@ const Card = ({ country }) => {
                     <div>
                         <img
                             className='object-cover rounded-t-md object-center h-40 w-[300px]'
-                            src={country.flags.png} alt="" />
+                            src={country.flags.png}
+                             alt="Country flag" />
                     </div>
 
                     <div className='p-6'>
