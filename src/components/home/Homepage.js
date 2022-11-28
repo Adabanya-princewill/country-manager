@@ -9,7 +9,6 @@ import localStorage from 'localforage'
 const HomePage = () => {
 
     let [countries, setCountries] = useState([])
-    //let [backupCountries, setCountriesBackup] = useState([])
 
     useEffect(() => {
         fetch("https://restcountries.com/v3.1/all")
@@ -19,7 +18,7 @@ const HomePage = () => {
                     //console.log(result)
                     setCountries(result)
                     localStorage.setItem('countries', result)
-                    //setCountriesBackup(result)
+
                 },
                 (error) => {
                     console.log(error)
@@ -34,7 +33,7 @@ const HomePage = () => {
             event.preventDefault();
             let inputData = event.target.value;
             if (inputData) {
-                console.log(inputData)
+                //  console.log(inputData)
                 localStorage.getItem('countries', (err, value) => {
                     if (!err) {
                         setCountries(value.filter(country => country.name.common.toLowerCase() === inputData.toLowerCase()))
@@ -52,7 +51,7 @@ const HomePage = () => {
 
         localStorage.getItem('countries', (err, value) => {
             if (!err) {
-                console.log(event.target.value)
+                //  console.log(event.target.value)
                 let inputData = event.target.value;
                 setCountries(value.filter(country => country.region.toLowerCase() === inputData.toLowerCase()))
             }
