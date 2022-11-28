@@ -8,12 +8,12 @@ const CountryDetails = () => {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [country, setCountry] = useState(null)
-  const params = useParams();
+  const pathParams = useParams();
 
 
 
   useEffect(() => {
-    fetch(`https://restcountries.com/v3.1/name/${params.name}`)
+    fetch(`https://restcountries.com/v3.1/name/${pathParams.name}`)
       .then(res => res.json())
       .then(
         (result) => {
