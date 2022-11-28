@@ -7,20 +7,22 @@ import React, { useState, useEffect } from 'react'
 const CountryDetails = () => {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [country, setCountry] = useState({})
+  const [country, setCountry] = useState(null)
   const params = useParams();
 
 
 
   useEffect(() => {
-
     fetch(`https://restcountries.com/v3.1/name/${params.name}`)
       .then(res => res.json())
       .then(
         (result) => {
-          setIsLoaded(true);
-          let [country] = result;
-          setCountry(country)
+          console.log("hello")
+          setIsLoaded(true);  
+          if (Array.isArray(result)){
+            let [country] = result;
+            setCountry(country)
+          }   
         },
         (error) => {
           setIsLoaded(true);
@@ -28,17 +30,17 @@ const CountryDetails = () => {
           console.log(error)
         }
       )
-  })
+  }, [])
 
 
   if (error) {
     return <div>Error: {error.message}</div>;
   }
   else if (!isLoaded) {
-    return <div>Loading...</div>;
+    return <div></div>;
   }
   else if (!country){
-    return <div>Country does not exist</div>;
+    return <div className='text-center text-xl font-semibold'>Country not found</div>;
   }
   else {
     return (
@@ -52,7 +54,7 @@ const CountryDetails = () => {
         
         <div>
           <NavLink to={"/"}>
-         <span className='px-5 py-2 ml-5 text-black'> back</span> 
+         <span className='shadow-md rounded-md px-5 py-2 ml-5 text-black'> back</span> 
           </NavLink>
         </div>
         <section className="text-gray-600 body-font overflow-hidden">
@@ -60,7 +62,6 @@ const CountryDetails = () => {
             <div className="lg:w-5/5 mx-auto flex flex-wrap">
 
               <img
-                alt="ecommerce"
                 className="border lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded"
                 src={country.flags.png} />
 
