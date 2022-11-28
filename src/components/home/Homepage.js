@@ -33,7 +33,7 @@ const HomePage = () => {
             let inputData = event.target.value;
             if (inputData) {
                 console.log(inputData)
-                setCountries(backupCountries.filter(country => country.name.common.toLowerCase() == inputData.toLowerCase()))
+                setCountries(backupCountries.filter(country => country.name.common.toLowerCase() === inputData.toLowerCase()))
             }
 
         }
@@ -43,7 +43,7 @@ const HomePage = () => {
 
         //  console.log(event.target.value)
         let inputData = event.target.value;
-        setCountries(backupCountries.filter(country => country.region.toLowerCase() == inputData.toLowerCase()))
+        setCountries(backupCountries.filter(country => country.region.toLowerCase() === inputData.toLowerCase()))
     }
 
 
