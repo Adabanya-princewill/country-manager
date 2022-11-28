@@ -1,8 +1,7 @@
 import Header from '../Header'
 import { NavLink, useParams } from 'react-router-dom'
-
-
 import React, { useState, useEffect } from 'react'
+
 
 const CountryDetails = () => {
   const [error, setError] = useState(null);
@@ -29,7 +28,7 @@ const CountryDetails = () => {
           console.log(error)
         }
       )
-  }, [])
+  }, [name])
 
 
   if (error) {
