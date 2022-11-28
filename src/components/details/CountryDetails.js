@@ -42,12 +42,17 @@ const CountryDetails = () => {
   }
   else {
     return (
+      <div>
+        <div className='w-full'>
+         <Header /> 
+        </div>
+      
       <div className='max-w-screen-xl mx-auto'>
 
-        <Header />
+        
         <div>
           <NavLink to={"/"}>
-         <span className='px-5 py-2 ml-5 rounded-md shadow-md text-black'> back</span> 
+         <span className='px-5 py-2 ml-5 text-black'> back</span> 
           </NavLink>
         </div>
         <section className="text-gray-600 body-font overflow-hidden">
@@ -82,7 +87,7 @@ const CountryDetails = () => {
         </section>
       </div>
 
-    )
+   </div> )
   }
 
 }

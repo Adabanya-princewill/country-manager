@@ -12,7 +12,7 @@ const Card = ({ country }) => {
                 className=""
                 to={`/country/${country.name.common}`}>
 
-                <div className='shadow-md w-[300px] mb-4 ml-4'>
+                <div className='shadow-md w-[230px] mb-4 ml-4'>
 
                     <div>
                         <img

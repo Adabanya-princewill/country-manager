@@ -52,12 +52,12 @@ const HomePage = () => {
             <Header />
             <section>
                 <div className="py-5 mx-auto sm:max-w-xl md:max-w-screen-xl">
-                    <div className="relative flex items-center justify-between">
+                    <div className="relative md:flex items-center justify-between mx-3 md:mx-0">
 
-                        <span className="px-4 md:text-xl tex-sm font-semibold text-gray-800"><Search searchCountryProp={searchCountry} /></span>
+                        <span className="px-4 md:text-xl text-sm font-semibold text-gray-800"><Search searchCountryProp={searchCountry} /></span>
 
 
-                        <div className="flex items-center  space-x-8 lg:flex">
+                        <div className="flex items-center space-x-8 lg:flex">
                             <span
                                 className="inline-flex items-center justify-center md:text-xl tex-sm text-gray-800"
                             >
@@ -70,7 +70,7 @@ const HomePage = () => {
                 </div>
             </section>
 
-            <main className='grid w-[300px] mx-auto md:w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1'>
+            <main className='sm:max-w-xl md:max-w-screen-xl grid w-[230px] mx-auto md:w-full grid-cols-1 md:grid-cols-3 lg:grid-cols-4'>
                 {countries.map((country, index) => (
                     
                           <Card key={index} country={country} />
